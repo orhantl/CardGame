@@ -23,10 +23,9 @@ public class CardBoardController {
 
     @RequestMapping("/")
     public String homePage(Model model) {
-
-        List<Card> unorderedHand = handService.getHand();
         List<Value> values = orderProvider.getRandomOrderValues();
         List<Color> colors = orderProvider.getRandomOrderColors();
+        List<Card> unorderedHand = handService.getHand();
         List<Card> orderedHand = handService.getOrderedHand(unorderedHand, colors, values);
 
         model.addAttribute("unorderedHand", unorderedHand);
