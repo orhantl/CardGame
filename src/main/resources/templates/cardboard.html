@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://thymeleaf.org ">
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
@@ -52,7 +53,7 @@
         </div>
         <div class="row justify-content-around">
             <img th:each="card: ${unorderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
-                 alt="an unordered playing card"/>
+                 th:alt="${card}"/>
         </div>
     </div>
 </div>
@@ -64,7 +65,7 @@
         </div>
         <div class="row justify-content-around">
             <img th:each="card: ${orderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
-                 alt="an ordered playing card"/>
+                 th:alt="${card}"/>
         </div>
     </div>
 </div>

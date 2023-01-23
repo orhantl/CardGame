@@ -19,7 +19,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return value + " of " + color;
+        return value.getName() + " of " + color.getName();
     }
 
     public String getImageFilename() {
