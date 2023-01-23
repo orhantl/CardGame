@@ -8,5 +8,8 @@ It allows displaying :
 
 ## Requirements
 * openjdk-17
+* spring boot 3.0.2
+
+
 
 
