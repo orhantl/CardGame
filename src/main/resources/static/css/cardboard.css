@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(#F8B195 0%, #F67280 25%, #C06C84 50%, #6C5B7B 75%, #355C7D 100%) fixed;
+}
+
+header, .container {
+    color: #1E3447;
+    font-family: Verdana, sans-serif;
+
+}
+
+header {
+    font-weight: bold;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.container {
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-family: Verdana, sans-serif;
+    font-style: oblique;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+
+
+

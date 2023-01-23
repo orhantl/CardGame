@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link th:href="@{/css/cardboard.css}" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+
+</head>
+<body>
+
+<header class="row justify-content-center">
+    <h1>Let's play cards !</h1>
+</header>
+
+<div class="container justify-content-center">
+    <div class="col-4">
+        <div class="row justify-content-md-start">
+            <h3>Color Order :</h3>
+        </div>
+        <div class="row justify-content-between">
+            <th:block th:each="color: ${colors}">
+                <img th:if="${color == T(com.play.cardgame.model.Color).SPADE}"
+                     th:src="@{'images/spade-32.png'}" alt="Spade"/>
+                <img th:if="${color == T(com.play.cardgame.model.Color).DIAMOND}"
+                     th:src="@{'images/diamond-32.png'}" alt="Diamond"/>
+                <img th:if="${color == T(com.play.cardgame.model.Color).CLUB}"
+                     th:src="@{'images/club-32.png'}" alt="Club"/>
+                <img th:if="${color == T(com.play.cardgame.model.Color).HEART}"
+                     th:src="@{'images/heart-32.png'}" alt="Heart"/>
+            </th:block>
+
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center">
+    <div class="col-8">
+        <div class="row justify-content-md-start">
+            <h3>Value Order :</h3>
+        </div>
+        <div class="row justify-content-start">
+            <p th:each="value: ${values}" th:text="${value.getName()}"></p>
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center">
+    <div class="col-11">
+        <div class="row justify-content-md-start">
+            <h3>Unordered Hand :</h3>
+        </div>
+        <div class="row justify-content-around">
+            <img th:each="card: ${unorderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
+                 alt="an unordered playing card"/>
+        </div>
+    </div>
+</div>
+
+<div class="container justify-content-center">
+    <div class="col-11">
+        <div class="row justify-content-md-start">
+            <h3>Ordered Hand :</h3>
+        </div>
+        <div class="row justify-content-around">
+            <img th:each="card: ${orderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
+                 alt="an ordered playing card"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
