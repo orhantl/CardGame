@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.play.cardgame.model.Color.convertColorToOrderCriteria;
+import static com.play.cardgame.model.Value.convertValueToOrderCriteria;
+
 @Service
 public class GameManager {
 
@@ -23,10 +26,10 @@ public class GameManager {
     }
 
     public GameSetUp getGameSetUp() {
-        List<OrderCriteria> colors = orderProvider.getRandomOrder(new ArrayList<>(Arrays.asList(Color.values())));
+        List<OrderCriteria> colors = orderProvider.getRandomOrder(convertColorToOrderCriteria());
         List<String> colorNames = colors.stream().map(OrderCriteria::getName).toList();
 
-        List<OrderCriteria> values = orderProvider.getRandomOrder(new ArrayList<>(Arrays.asList(Value.values())));
+        List<OrderCriteria> values = orderProvider.getRandomOrder(convertValueToOrderCriteria());
         List<String> valueNames = values.stream().map(OrderCriteria::getName).toList();
 
         List<Card> unorderedHand = handDealer.getHand();
