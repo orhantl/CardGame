@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
-    <link th:href="@{/css/cardboard.css}" rel="stylesheet"/>
+    <link th:href="@{/css/gameboard.css}" rel="stylesheet"/>
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
 
 </head>
@@ -21,13 +21,13 @@
         </div>
         <div class="row justify-content-between">
             <th:block th:each="color: ${colors}">
-                <img th:if="${color == T(com.play.cardgame.model.Color).SPADE}"
+                <img th:if="${color == 'Spade'}"
                      th:src="@{'images/spade-32.png'}" alt="Spade"/>
-                <img th:if="${color == T(com.play.cardgame.model.Color).DIAMOND}"
+                <img th:if="${color == 'Diamond'}"
                      th:src="@{'images/diamond-32.png'}" alt="Diamond"/>
-                <img th:if="${color == T(com.play.cardgame.model.Color).CLUB}"
+                <img th:if="${color == 'Club'}"
                      th:src="@{'images/club-32.png'}" alt="Club"/>
-                <img th:if="${color == T(com.play.cardgame.model.Color).HEART}"
+                <img th:if="${color == 'Heart'}"
                      th:src="@{'images/heart-32.png'}" alt="Heart"/>
             </th:block>
 
@@ -41,7 +41,7 @@
             <h3>Value Order :</h3>
         </div>
         <div class="row justify-content-start">
-            <p th:each="value: ${values}" th:text="${value.getName()}"></p>
+            <p th:each="value: ${values}" th:text="${value}"></p>
         </div>
     </div>
 </div>
@@ -52,8 +52,8 @@
             <h3>Unordered Hand :</h3>
         </div>
         <div class="row justify-content-around">
-            <img th:each="card: ${unorderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
-                 th:alt="${card}"/>
+            <img th:each="card: ${unorderedHand}" th:src="@{'images/'+${card}}" width="100"
+                 alt="${card}"/>
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@
             <h3>Ordered Hand :</h3>
         </div>
         <div class="row justify-content-around">
-            <img th:each="card: ${orderedHand}" th:src="@{'images/'+${card.getImageFilename}}" width="100"
+            <img th:each="card: ${orderedHand}" th:src="@{'images/'+${card}}" width="100"
                  th:alt="${card}"/>
         </div>
     </div>

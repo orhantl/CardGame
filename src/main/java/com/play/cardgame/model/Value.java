@@ -1,6 +1,10 @@
 package com.play.cardgame.model;
 
-public enum Value {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public enum Value implements OrderCriteria {
     ACE ("Ace"),
     KING("King"),
     QUEEN("Queen"),
@@ -23,5 +27,9 @@ public enum Value {
 
     public String getName() {
         return name;
+    }
+
+    public static List<OrderCriteria> convertValueToOrderCriteria() {
+        return new ArrayList<>(Arrays.asList(Value.values()));
     }
 }

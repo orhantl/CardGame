@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Random;
 
 @Service
-public class HandService {
+public class HandDealer {
 
     private static final int HAND_SIZE = 10;
     private static final  Random random = new Random();
 
-    public HandService() {
+    public HandDealer() {
     }
 
     public List<Card> getHand() {
@@ -38,16 +38,5 @@ public class HandService {
                         .map(v -> new Card(v, c))
                         .forEach(deck::add));
         return deck;
-    }
-
-    public List<Card> getOrderedHand(List<Card> hand, List<Color> orderedColors, List<Value> orderedValues) {
-        List<Card> orderedHand = new ArrayList<>();
-
-        orderedColors.forEach(color -> orderedValues.forEach(value -> hand.stream()
-                .filter(card -> card.getColor().equals(color) && card.getValue().equals(value))
-                .findAny()
-                .ifPresent(orderedHand::add)));
-
-        return orderedHand;
     }
 }
