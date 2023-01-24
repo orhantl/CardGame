@@ -2,13 +2,9 @@ package com.play.cardgame.service;
 
 import com.play.cardgame.controller.GameSetUp;
 import com.play.cardgame.model.Card;
-import com.play.cardgame.model.Color;
 import com.play.cardgame.model.OrderCriteria;
-import com.play.cardgame.model.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.play.cardgame.model.Color.convertColorToOrderCriteria;

@@ -14,7 +14,7 @@ import java.util.Random;
 public class HandDealer {
 
     private static final int HAND_SIZE = 10;
-    private static final  Random random = new Random();
+    private static final  Random RANDOM = new Random();
 
     public HandDealer() {
     }
@@ -24,7 +24,7 @@ public class HandDealer {
         List<Card> hand = new ArrayList<>();
 
         for (int i = 0; i < HAND_SIZE; i++) {
-            int randomIndex = random.nextInt(deck.size()-1);
+            int randomIndex = RANDOM.nextInt(deck.size()-1);
             hand.add(deck.get(randomIndex));
             deck.remove(randomIndex);
         }

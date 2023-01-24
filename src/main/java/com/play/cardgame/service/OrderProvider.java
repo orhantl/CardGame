@@ -11,7 +11,7 @@ import java.util.Random;
 @Service
 public class OrderProvider {
 
-    private static final Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public OrderProvider() {
     }
@@ -21,7 +21,7 @@ public class OrderProvider {
         int originalCriteriaSize = orderCriteria.size();
 
         for (int i = 0; i < originalCriteriaSize; i++) {
-            int randomIndex = random.nextInt(orderCriteria.size());
+            int randomIndex = RANDOM.nextInt(orderCriteria.size());
             randomOrderCriteria.add(orderCriteria.get(randomIndex));
             orderCriteria.remove(randomIndex);
         }
