@@ -32,7 +32,7 @@ public class OrderProvider {
         List<Card> orderedHand = new ArrayList<>();
 
         orderedColors.forEach(color -> orderedValues.forEach(value -> hand.stream()
-                .filter(card -> card.getColor().equals(color) && card.getValue().equals(value))
+                .filter(card -> card.color().equals(color) && card.value().equals(value))
                 .findAny()
                 .ifPresent(orderedHand::add)));
 
